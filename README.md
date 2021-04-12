@@ -2,23 +2,30 @@
 by: Gabriela Tijerina 
 ****
 
+“I see the mycelium as the Earth's natural Internet, a consciousness with which we might be able to communicate. Through cross-species interfacing, we may one day exchange information with these sentient cellular networks. Because these externalized neurological nets sense any impression upon them, from footsteps to falling tree branches, they could relay enormous amounts of data regarding the movements of all organisms through the landscape.” 
+― Paul Stamets, ***Mycelium Running: How Mushrooms Can Help Save the World***
+***
+
 ### Project Summary:
 
+This dataset is from The Audobon Society Field Guide and consists of 8124 hypothetical samples corresponding to 23 species of gilled mushroom in the Agaricus and Lepiota family. Each entry has 22 features relating to the physical characteristics of each mushroom. Each species is identified as "definitely edible", "definitely poisonous", or of unknown edibility. The latter class has been merged with "definitely poisonous".
 
 
+The purpose of this notebook is to explore any relationships that exist between the physical characteristics of mushrooms and to accurately predict if a mushroom is safe to eat from these characteristics using ML classification models. 
 
-**Data Source:** 
+
+**Data Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/mushroom)
 ****
 
 ### Goals:
-* 
-* 
+* Explore relationships that exist between the physical characteristics of mushrooms to accurately predict if a mushroom is safe to eat from these characteristics
+* Build a model to predict whether or not a mushroom is edible or poisonous 
 **** 
 
 ### Deliverables:
 * README.md file explaining what the project is, how to reproduce our work, and our notes from project planning
-* 
-* 
+* A final Jupyter Notebook [(Mushroom_Classification_Report.ipynb)](https://github.com/gabrielatijerina/mushroom-classification-project/blob/main/Mushroom_Classification_Report.ipynb) that includes discoveries I made and work I have done related to uncovering whether or not a mushroom is poisonous or edible
+* Python files that automate the data acquisition (`acquire.py`) and data preparation (`prepare.py`) process. 
 **** 
 
 ### Data Dictionary
@@ -57,68 +64,51 @@ stalk-root | bulbous=b,club=c,cup=u,equal=e, rhizomorphs=z,rooted=r,missing=? | 
 ### Data Science Pipeline:
 
 #### 1. Acquire
-- Connect to the SQL company database (login credentials required)
 - Summarize initial data to determine how data needs to be prepared and cleaned 
 - Define functions to:
-    - Create a connection url to access the CodeUp's SQL database using personal credentials
-    - Acquire Zillow data from MySQL and return as a dataframe
-    - Create a .csv file of acquired data 
-- All functions to acquire data are included in [acquire.py](link here)
+    - Acquire mushroom dataset and return as a dataframe
+- All functions to acquire data are included in [acquire.py](https://github.com/gabrielatijerina/mushroom-classification-project/blob/main/acquire.py)
 
 #### 2. Prepare
 - Review data and address any missing or erroneous values 
 - Define functions to:
-    - Clean Zillow data and return as a clean dataframe 
-    - Visualize nulls 
-    - Handle missing values 
+    - Clean mushroom data and return as a clean dataframe 
     - Remove columns 
-    - Create features 
-    - Handle/remove outliers 
-- All functions to prepare the data are included in [prepare.py](link here)
+    - Encode data
+- All functions to prepare the data are included in [prepare.py](https://github.com/gabrielatijerina/mushroom-classification-project/blob/main/prepare.py)
 
 #### 3. Explore
-- Address questions posed in planning and brainstorming and figure out drivers of log error
 - Create visualizations of variables 
 - Run statistical tests 
 - Summarize key findings and takeaways
-- Define functions to:
-    - Split the data to explore on the training data set
-    - Run univariate, bivariate, and multivariate visualizations for how features interact with each other and the target, logerror
-    - Use clustering to further determine features driving log error and engineer new features as discovered
-- All functions to explore the data are included in [explore.py](link here)
+
 
 #### 4. Model/Evaluate
 - Goal: develop a model that performs better than the baseline
-- Develop a baseline model and linear regression model without controlling for counties
-- Iterate process for each of the three counties
-- Evaluate if the individualized county models performed better than the all counties model
+- Develop a baseline model and classification models 
 - Summarize performance, interpret, and document results
-- Define functions to:
-    - Evaluate model using standard techniques: plotting the residuals, computing the evaluation metrics (SSE, RMSE, and/or MSE), comparing to baseline, plotting y by y-hat
-- All functions to evaluate models are included in [evaluate.py](link here)
+
 
 #### 5. Deliver
-- A final Jupyter Notebook [(notebook_name.ipynb)](link here) for presentation that includes discoveries we made and work we have done related to uncovering what the drivers of the error in the Zestimate® are 
+- A final Jupyter Notebook [(Mushroom_Classification_Report.ipynb)](https://github.com/gabrielatijerina/mushroom-classification-project/blob/main/Mushroom_Classification_Report.ipynb) 
 
 ### Conclusion:
--  
+-  Random Forest, KNN, and Decision Tree models all performed well. I used Random Forest to test, and my model performed better than baseline with 100% accuracy. 
 
 ### Next Steps: 
-- 
+- In the future, I would like to investigate the effectiveness of this model on new, unseen data.
 
 ****
 
 ### Instructions for Reproducing Project:  
-All files are reproducible and available for download and use. You will need login credentials for access to the Zillow company database.
+All files are reproducible and available for download and use. 
 
 1.  Read and follow this README.md. 
 
 2.  Download the following files to your working directory:  
- - [file-name.ipynb](link here)
- - [acquire.py](link here)
- - [prepare.py](link here)
- - [explore.py](link here)
- - [evaluate.py](link here)
-  
-
-3. Run my final Jupyter Notebook [file-name.ipynb](link here) to reproduce our findings and analysis. 
+ - Download mushroom data set here: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/mushroom)
+ - [Mushroom_Classification_Report.ipynb](https://github.com/gabrielatijerina/mushroom-classification-project/blob/main/Mushroom_Classification_Report.ipynb)
+ - [acquire.py](https://github.com/gabrielatijerina/mushroom-classification-project/blob/main/acquire.py)
+ - [prepare.py](https://github.com/gabrielatijerina/mushroom-classification-project/blob/main/prepare.py)
+ 
+3. Run my final Jupyter Notebook [(Mushroom_Classification_Report.ipynb)](https://github.com/gabrielatijerina/mushroom-classification-project/blob/main/Mushroom_Classification_Report.ipynb) to reproduce my findings and analysis. 
